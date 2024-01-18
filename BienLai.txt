@@ -1,0 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package quanlitiendien;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+import java.util.*;
+/**
+ *
+ * @author Minh Chau
+ */
+public class BienLai extends khachHang{
+    private int chiSoMoi;
+    private int chiSoCu;
+
+    public BienLai( String tenChuHo,String diaChi, String maCongTo, int chiSoMoi, int chiSoCu ){
+        super(tenChuHo,diaChi,maCongTo);
+        this.chiSoMoi=chiSoMoi;
+        this.chiSoCu=chiSoCu;
+    }
+    public int getChiSoMoi() {
+        return chiSoMoi;
+    }
+    
+    public void setChiSoMoi(int chiSoMoi) {
+        this.chiSoMoi = chiSoMoi;
+    }
+
+    public int getChiSoCu() {
+        return chiSoCu;
+    }
+
+    public void setChisoCu(int chiSoCu) {
+        this.chiSoCu = chiSoCu;
+    }
+
+    public long getSoTienPhaiTra() {
+        return (this.chiSoMoi-this.chiSoCu)*750;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +" Chi so moi la : " +this.chiSoMoi +" "+"Chi so cu la : "+this.chiSoCu+" So tien phai tra la : " + this.getSoTienPhaiTra()+" DVT ";
+    }
+}

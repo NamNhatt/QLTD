@@ -1,0 +1,45 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package quanlitiendien;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.*;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Minh Chau
+ */
+public class QuanLiTienDien {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<BienLai> arr = new ArrayList<>();
+        System.out.print("  Xin moi nhap so luong bien lai : ");
+        int sl = sc.nextInt();
+        sc.nextLine();
+        for (int i = 1; i <= sl; i++) {
+            System.out.println("    Bien lai thu "+i);
+            System.out.println("    Xin moi nhap thong tin : ");
+            System.out.print("Ten chu ho : ");
+            String tenChuHo = sc.nextLine();
+            System.out.print("Dia Chi : ");
+            String diaChi = sc.nextLine();
+            System.out.print("Ma so cong to: ");
+            String maCongTo = sc.nextLine();
+            System.out.print("Chi so moi : ");
+            int chiSoMoi = sc.nextInt();sc.nextLine();
+            System.out.print("Chi so cu : ");
+            int chiSoCu = sc.nextInt();sc.nextLine();
+            BienLai bl = new BienLai(tenChuHo, diaChi, maCongTo, chiSoMoi, chiSoCu);
+            arr.add(bl);
+        }
+          System.out.println("Thong tin cac bien lai tien dien la ( moi hang la mot hoa don ) : ");
+        for (BienLai item : arr) {
+            System.out.println(item.toString());
+        }
+    }
+}
